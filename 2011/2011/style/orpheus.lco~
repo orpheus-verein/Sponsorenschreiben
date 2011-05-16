@@ -1,0 +1,138 @@
+\ProvidesFile{orpheus.lco}
+
+
+\RequirePackage{scrpage2}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[latin1]{inputenc}
+\RequirePackage[ngerman]{babel}
+\RequirePackage{graphicx}
+\RequirePackage{nicefrac}
+\RequirePackage{url}
+\RequirePackage{tabularx}
+
+\KOMAoptions{
+						 BCOR=0mm,
+						 DIV=12,
+						 paper=a4,
+						 parskip=half,
+						 fromlogo=true,
+						 foldmarks=true
+						}
+
+\newkomavar{name}
+
+\setkomavar{name}{Vitaly Andreev}
+
+\setkomavar{place}{Garching bei München}
+
+\setkomavar{backaddress}{Vitaly Andreev \\ Enzianstr. 7, Zi. S004\\ 85748 Garching bei München}
+\setkomafont{backaddress}{\fontsize{7pt}{7pt}\usefont{OT1}{cmss}{m}{n}}
+
+\setkomavar{signature}{\noindent \usekomavar{name}, \small Im Namen von Orpheus e.\,V.}
+\renewcommand{\raggedsignature}{\raggedright}
+
+% Kopfzeile
+\setkomavar{fromlogo}{
+	
+	\begin{tabularx}{\useplength{firstheadwidth}}{X@{\hspace{3pt}}p{170pt}@{\hspace{3pt}}c}
+	%
+		\hrule
+		%
+		&
+		%
+		\hfill\mbox{\hfill
+		%
+		\raisebox{-3pt}
+		{
+			\begin{minipage}{108pt}
+				{\footnotesize
+				%
+					\textsf{\textbf{Or}ganisationsgruppe \textbf{Ph}ysik \newline 
+									f\"ur \textbf{eu}rop\"aische Sch\"uler und \newline 
+									\textbf{S}tudenten (Orpheus) e.\,V.} \par %
+				} %
+				%
+				\end{minipage}
+				%
+				\hspace{1pt}
+				%
+				\raisebox{-18pt}{\includegraphics[scale=0.24]{logo.pdf}}}}
+				&
+				\rule{2mm}{.4pt}
+	%							
+	\end{tabularx}
+}
+						
+% "`Absender"'											
+\setkomavar{location}
+{%											
+	{\footnotesize  \par}
+	
+	{\normalsize 
+	
+		\textbf{Orpheus e.\,V.}
+		
+		% ggf. "`Position"'									
+		% \textbf{Öffentlichkeitsarbeit / \newline{} Fundraising}
+											
+		{\footnotesize \url{ info@orpheus-verein.de} \newline{}
+			\url{www.orpheus-verein.de} }
+											
+	}
+}
+
+\pagestyle{scrheadings}
+
+\cfoot{}
+
+\newcommand{\fusszeile}{%
+			 \par
+ 			 \tiny \normalfont
+       \par %
+       %
+       \noindent \begin{tabularx}{1\textwidth}{@{}p{2.5cm}Xp{2.5cm}Xp{2cm}Xp{2.3cm}@{}}
+			 \textsf{Orpheus e.\,V.} \newline
+			 \nicefrac{c}{o} Dankrad Feist\newline
+			 Carsonweg 82\newline
+			 64289 Darmstadt\par
+
+			 &&
+
+			 \textsf{Kontakt:}\newline
+			 \url{info@orpheus-verein.de} \newline
+			 \url{www.orpheus-verein.de} \newline
+			 Tel. 0228/402357
+
+			 &&
+
+			 \textsf{Bankverbindung:} \newline
+			 SSK M\"unchen \newline
+			 BLZ 70150000 \newline
+			 Kto.-Nr. 149435
+			 
+			 &&
+
+			 \textsf{Vorstandsvorsitzender:}\newline
+			 Dankrad Feist \newline
+			 \textsf{Zweiter Vorsitzender:}\newline
+			 Tobias Fritz
+			 \end{tabularx}}
+
+
+\chead{\small \normalfont -- \thepage{} --}
+
+% noch nicht auf einer H\"ohe mit firstfoot
+\ifoot{\fusszeile}
+
+\firstfoot{\vspace{69pt} \fusszeile}
+
+
+\makeatletter
+ \@setplength{sigindent}{0pt}
+ \@setplength{firstfootwidth}{\textwidth}
+ 
+ % Position des Absenders
+ %\@addtoplength{locvpos}{0pt}
+ %\@addtoplength{lochpos}{65pt}
+ \@setplength{locwidth}{125pt}
+\makeatother
